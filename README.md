@@ -1,50 +1,178 @@
-Project Title: Eye Disease Classification using Deep Learning and Traditional Machine Learning
+# Eye Disease Classification using Deep Learning and Machine Learning
 
-Author: AMAL THOMAS
+## Project Overview
 
-Project Overview: This project focuses on automated detection of multiple eye diseases from retinal fundus images using state-of-the-art deep learning models and a comparison with traditional machine learning approaches. The aim is to assist ophthalmologists in early diagnosis, reduce manual screening time, and make disease detection more accessible through a web-based application.
+This project focuses on automated classification of retinal fundus images into multiple eye disease categories using deep learning models, along with a comparison against traditional machine learning approaches. The objective is to assist ophthalmologists in early diagnosis, reduce manual screening time, and provide an accessible AI-based diagnostic support system through a web application.
 
-The system classifies fundus images into multiple disease categories, provides heatmap visualizations (Grad-CAM) to highlight regions of interest, and generates downloadable PDF reports for users.
+---
 
-What I Did in This Project:
+## Objectives
 
-Collected and preprocessed a dataset of labeled fundus images for 12 eye disease categories.
-Applied data augmentation (rotation, flipping, brightness changes) to address class imbalance.
-Trained and evaluated multiple deep learning architectures.
-Implemented Grad-CAM visualizations for model interpretability.
-Built a web-based application for user-friendly predictions and reports.
-Compared deep learning performance with traditional machine learning classifiers using CNN-based feature extraction.
-Deep Learning Models Used:
+* Classify retinal fundus images into 12 eye disease categories
+* Compare deep learning models with traditional machine learning algorithms
+* Improve interpretability using Grad-CAM visualizations
+* Deploy a web-based application for real-time predictions
+* Generate downloadable PDF reports
 
-EfficientNet-B0
-EfficientNet-B3
-EfficientNet-B4
-ResNet50
-DenseNet121
-Ensemble Model:
+---
 
-Combined the top two performing models into an ensemble by averaging their prediction probabilities, improving overall classification accuracy.
-Traditional Machine Learning Comparison:
+## Methodology
 
-Extracted deep features from two of the CNN models.
-Used these features to train and evaluate traditional ML classifiers such as Support Vector Machine (SVM), Random Forest (RF), K-Nearest Neighbors (KNN), and Logistic Regression.
-Compared performance metrics (accuracy, precision, recall, F1-score) between deep learning models and ML classifiers.
-Comparison Summary:
+### Data Collection and Preprocessing
 
-Deep learning models, especially EfficientNet-B4 and DenseNet121, achieved the highest accuracy due to their ability to learn complex features from raw images.
-Traditional ML models performed well on extracted features but were limited by the quality of feature extraction and did not match top CNN performance.
-Ensemble learning further improved prediction reliability.
-How This Project is Useful:
+* Collected a labeled dataset of retinal fundus images
+* Performed preprocessing:
 
-Early Detection: Identifies eye diseases before progression, potentially preventing vision loss.
-Healthcare Support: Provides a decision-support tool for ophthalmologists.
-Transparency: Grad-CAM visualizations improve trust by showing the decision-making process.
-Scalability: Web deployment allows use in remote or underserved areas.
-Educational Value: Demonstrates practical comparison between cutting-edge deep learning and traditional ML techniques in medical imaging.
-Technologies Used:
+  * Image resizing and normalization
+  * Noise reduction
+* Applied data augmentation:
 
-Python, TensorFlow/Keras
-OpenCV, NumPy, Pandas
-Matplotlib, Seaborn
-Streamlit (for web app)
-Grad-CAM for explainability
+  * Rotation
+  * Flipping
+  * Brightness adjustment
+* Addressed class imbalance and improved model generalization
+
+---
+
+### Deep Learning Models
+
+The following architectures were implemented and evaluated:
+
+* EfficientNet-B0
+* EfficientNet-B3
+* EfficientNet-B4
+* ResNet50
+* DenseNet121
+
+---
+
+### Ensemble Learning
+
+* Combined top-performing models (EfficientNet-B4 and DenseNet121)
+* Used probability averaging for predictions
+* Improved overall classification performance and robustness
+
+---
+
+### Traditional Machine Learning Comparison
+
+* Extracted deep features from trained CNN models
+* Trained classical machine learning models:
+
+  * Support Vector Machine (SVM)
+  * Random Forest (RF)
+  * K-Nearest Neighbors (KNN)
+  * Logistic Regression
+* Compared results with deep learning models
+
+---
+
+### Model Evaluation
+
+Performance was evaluated using:
+
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion Matrix
+
+---
+
+### Explainability
+
+* Implemented Grad-CAM for visual explanations
+* Highlighted important regions in retinal images
+* Improved transparency of model predictions
+
+---
+
+### Web Application
+
+* Developed using Streamlit
+* Features:
+
+  * Image upload
+  * Real-time prediction
+  * Grad-CAM visualization
+  * PDF report generation
+
+---
+
+## Results Summary
+
+* Deep learning models achieved the highest performance
+* EfficientNet-B4 and DenseNet121 performed best among individual models
+* Traditional machine learning models performed moderately
+* Ensemble model provided the most reliable predictions
+
+---
+
+## Technologies Used
+
+* Python
+* TensorFlow / Keras
+* OpenCV
+* NumPy, Pandas
+* Matplotlib, Seaborn
+* Streamlit
+* Grad-CAM
+
+---
+
+## How to Run
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/eye-disease-classification.git
+cd eye-disease-classification
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Project Structure
+
+```
+├── data/                 
+├── models/               
+├── notebooks/            
+├── app.py                
+├── utils/                
+├── reports/              
+├── requirements.txt      
+└── README.md             
+```
+
+---
+
+## Applications
+
+* Early detection of eye diseases
+* Clinical decision support systems
+* Remote healthcare accessibility
+* Medical AI research
+
+---
+
+## Disclaimer
+
+This project is intended for educational and research purposes only and should not be used for medical diagnosis.
+
+---
+
+## Author
+
+Amal Thomas
